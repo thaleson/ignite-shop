@@ -1,34 +1,123 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ignite Shop
 
-## Getting Started
+Ignite Shop é um projeto de e-commerce desenvolvido com Next.js e TypeScript. Este projeto utiliza a biblioteca Stitches para estilização e integra com a API do Stripe para processar pagamentos.
 
-First, run the development server:
+## Estrutura do Projeto
+
+O projeto possui a seguinte estrutura de diretórios:
+
+```
+ignite-shop/
+├── .next/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── logo.svg
+│   ├── lib/
+│   │   └── stripe.ts
+│   ├── pages/
+│   │   ├── api/
+│   │   │   └── checkout.ts
+│   │   ├── product/
+│   │   │   ├── [id].tsx
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   ├── index.tsx
+│   │   └── success.tsx
+│   ├── styles/
+│   │   ├── app.ts
+│   │   ├── home.ts
+│   │   ├── product.ts
+│   │   ├── success.ts
+│   │   ├── globals.ts
+│   │   └── index.ts
+├── .env.local
+├── .eslintrc.json
+└── .gitignore
+```
+
+## Tecnologias Utilizadas
+
+- **Next.js**: Framework React para desenvolvimento de aplicações web.
+- **TypeScript**: Superset JavaScript que adiciona tipagem estática ao JavaScript.
+- **Stitches**: Biblioteca CSS-in-JS para estilização.
+- **Stripe**: API de pagamentos online.
+
+## Instalação
+
+Para instalar e executar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/ignite-shop.git
+```
+
+2. Navegue até o diretório do projeto:
+
+```bash
+cd ignite-shop
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+ou
+
+```bash
+yarn install
+```
+
+4. Crie um arquivo `.env.local` na raiz do projeto e adicione as suas variáveis de ambiente:
+
+```
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your-stripe-public-key
+STRIPE_SECRET_KEY=your-stripe-secret-key
+```
+
+5. Execute o projeto em modo de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+```
+
+ou
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Abra o navegador e acesse `http://localhost:3000`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Estilização
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+O projeto utiliza a biblioteca Stitches para estilização. Os estilos globais e os componentes estilizados estão localizados na pasta `src/styles`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Páginas
 
-## Learn More
+- **Home (`src/pages/index.tsx`)**: Página inicial da loja.
+- **Produto (`src/pages/product/[id].tsx`)**: Página de detalhes do produto.
+- **Sucesso (`src/pages/success.tsx`)**: Página exibida após uma compra bem-sucedida.
 
-To learn more about Next.js, take a look at the following resources:
+## API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto possui uma API para processar pagamentos utilizando Stripe:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Checkout (`src/pages/api/checkout.ts`)**: Endpoint para criar uma sessão de checkout no Stripe.
 
-## Deploy on Vercel
+## Contribuição
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Se você quiser contribuir com este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
+
+---
+
+Feito com ❤️ por [Thaleson](https://github.com/thaleson)
+
